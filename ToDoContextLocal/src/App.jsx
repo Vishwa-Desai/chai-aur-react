@@ -23,7 +23,7 @@ function App() {
     setToDos((prev) => prev.map((prevToDo)=> (prevToDo.id === id ? {...prevToDo,completed: !prevToDo.completed} : prevToDo)))
   }
 
-  // To set values in local storage
+  // To get values from local storage
   useEffect(()=> {
     const todos = JSON.parse(localStorage.getItem("todos"));
     
@@ -32,7 +32,7 @@ function App() {
     }
   },[])
 
-  // To get values in local storage
+  // To set values in local storage
   useEffect(()=> {
     localStorage.setItem("todos",JSON.stringify(todos))
   },[todos])
